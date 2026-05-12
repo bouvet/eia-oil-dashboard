@@ -1,8 +1,30 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
+# Environment
+.env
 
-# Jupyter Notebook
+# Database
+data/oil_dashboard.duckdb
+
+# Raw data layers
+data/bronze/
+data/silver/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter
 .ipynb_checkpoints
 
-# Environments
-.env
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env.local
