@@ -1,28 +1,22 @@
 {
   "permissions": {
     "allow": [
-      "Bash(../venv/Scripts/python ingestion/run_ingestion.py)",
-      "Bash(../venv/Scripts/python -c ' *)",
-      "Bash(../venv/Scripts/uvicorn main:app --port 8000)",
-      "Bash(curl -s http://localhost:8000/api/kpi)",
-      "Bash(netstat -ano)",
-      "PowerShell(Stop-Process *)",
-      "Bash(../venv/Scripts/uvicorn main:app --port 8001)",
-      "Bash(curl -s http://localhost:8001/api/kpi)",
-      "Bash(python -m json.tool)",
-      "Bash(curl -s http://localhost:8001/api/stocks)",
-      "Bash(curl -s http://localhost:8001/api/countries)",
-      "Bash(curl -s \"http://localhost:8001/api/world\")",
-      "Bash(curl -v http://localhost:8001/api/stocks)",
-      "Bash(curl -s \"http://localhost:8001/api/stocks\")",
-      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d[-2:]\\)\")",
-      "Bash(curl -s \"http://localhost:8001/api/production\")",
-      "Bash(curl -s \"http://localhost:8001/api/countries\")",
-      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(r['country_name'], r['value_kbd']\\) for r in d[:5]]\")",
+      "WebSearch",
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(npm view *)",
+      "Bash(uv sync *)",
       "Bash(npm install *)",
-      "Bash(npm run *)",
-      "Bash(curl -s -H \"Origin: http://localhost:5174\" http://localhost:8001/api/kpi -I)",
-      "Bash(curl -s -H \"Origin: http://localhost:5174\" -H \"Access-Control-Request-Method: GET\" -X OPTIONS http://localhost:8001/api/kpi -I)"
+      "Bash(uv run *)",
+      "Bash(curl -fsS http://127.0.0.1:8765/ -o /dev/null)",
+      "Bash(curl -sf http://127.0.0.1:8765/api/kpi)",
+      "Bash(curl -sf http://127.0.0.1:8765/api/stocks)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('len:', len\\(d\\)\\); print\\('first:', d[0]\\); print\\('last:', d[-1]\\)\")",
+      "Bash(curl -sf http://127.0.0.1:8765/api/production)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('len:', len\\(d\\)\\); print\\('last:', d[-1]\\)\")",
+      "Bash(curl -sf http://127.0.0.1:8765/api/countries)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('len:', len\\(d\\)\\); print\\('top3:', d[:3]\\)\")",
+      "Bash(curl -sf http://127.0.0.1:8765/api/world)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('len:', len\\(d\\)\\); print\\('sample:', d[:2]\\)\")"
     ]
   }
 }

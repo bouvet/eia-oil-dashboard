@@ -1,0 +1,16 @@
+[project]
+name = "eia-oil-dashboard-backend"
+version = "0.1.0"
+description = "FastAPI backend serving DuckDB-backed EIA oil market data."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.136.1",
+    "uvicorn[standard]==0.46.0",
+    "duckdb==1.5.0",
+    "pandas==3.0.3",
+    "requests==2.32.3",
+    "python-dotenv==1.2.2",
+]
+
+[tool.uv]
+package = false
