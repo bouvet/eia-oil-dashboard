@@ -1,0 +1,12 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "name": "DuckDB",
+            "accessMode": "Read Only",
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "databaseFilePath": "C:\\Users\\anne.estoppey\\OneDrive - Bouvet Norge AS\\Documents\\Github\\eia-oil-dashboard\\data\\oil_dashboard.duckdb"
+        }
+    ]
+}

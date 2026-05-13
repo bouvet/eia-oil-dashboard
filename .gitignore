@@ -3,6 +3,7 @@
 
 # Database
 data/oil_dashboard.duckdb
+DuckDB.session.sql
 
 # Raw data layers
 data/bronze/
@@ -28,3 +29,6 @@ node_modules/
 frontend/dist/
 frontend/.vite/
 frontend/.env.local
+
+# initial prompt to claude code
+claude_code_prompt_v1.md
