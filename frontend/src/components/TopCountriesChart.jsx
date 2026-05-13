@@ -2,28 +2,31 @@ import React from 'react'
 import { Card, CardContent, Typography } from '@mui/material'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  Tooltip, ResponsiveContainer, Cell,
+  Tooltip, ResponsiveContainer,
 } from 'recharts'
 
-const US_COLOR = '#f0a500'
-const DEFAULT_COLOR = '#4da6ff'
+const BAR_COLOR = '#4da6ff'
 
 export default function TopCountriesChart({ data }) {
-  // Sort ascending so the largest bar is at the top in a horizontal chart
-  const sorted = [...data].sort((a, b) => a.value_kbd - b.value_kbd)
+  // Sort descending so the largest producers appear at the top
+  const sorted = [...data].sort((a, b) => b.value_kbd - a.value_kbd)
 
   return (
-    <Card elevation={2}>
+    <Card elevation={2} sx={{ height: '100%' }}>
       <CardContent>
-        <Typography variant="subtitle1" fontWeight={600} mb={2}>
+        <Typography variant="subtitle1" fontWeight={600} mb={1}>
           Top 15 Countries by Annual Production
+        </Typography>
+
+        <Typography variant="caption" color="text.secondary" display="block" mb={1}>
+          Thousand barrels per day
         </Typography>
 
         <ResponsiveContainer width="100%" height={400}>
           <BarChart
             data={sorted}
             layout="vertical"
-            margin={{ top: 5, right: 30, bottom: 5, left: 100 }}
+            margin={{ top: 5, right: 50, bottom: 5, left: 0 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" horizontal={false} />
             <XAxis
@@ -41,21 +44,9 @@ export default function TopCountriesChart({ data }) {
               formatter={v => [`${v != null ? v.toLocaleString() : 'N/A'} kbd`]}
               contentStyle={{ backgroundColor: '#1e2530', border: 'none' }}
             />
-            <Bar dataKey="value_kbd" name="Production (kbd)" radius={[0, 3, 3, 0]}>
-              {sorted.map((entry, i) => (
-                <Cell
-                  key={i}
-                  fill={entry.iso3 === 'USA' ? US_COLOR : DEFAULT_COLOR}
-                />
-              ))}
-            </Bar>
+            <Bar dataKey="value_kbd" name="Production (kbd)" fill={BAR_COLOR} radius={[0, 3, 3, 0]} />
           </BarChart>
         </ResponsiveContainer>
-
-        <Typography variant="caption" color="text.secondary">
-          Thousand barrels per day &nbsp;|&nbsp;
-          <span style={{ color: US_COLOR }}>■</span> United States
-        </Typography>
       </CardContent>
     </Card>
   )

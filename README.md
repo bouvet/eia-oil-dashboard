@@ -8,7 +8,7 @@ open data API v2](https://www.eia.gov/opendata/).
 - **Frontend**: React 18 + Vite + Material UI dark theme
 - **Data layout**: bronze (raw) → silver (cleaned) → gold (dashboard views) in DuckDB
 
-> _Screenshot placeholder — drop a PNG of the running dashboard here._
+![Dashboard screenshot](docs\dashoard_screenshot.jpg)
 
 ## Panels
 

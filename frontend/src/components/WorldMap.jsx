@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
-import { Card, CardContent, Typography, Tooltip as MuiTooltip, Box } from '@mui/material'
-import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
+import { Card, CardContent, Typography, Tooltip as MuiTooltip, Box, IconButton } from '@mui/material'
+import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps'
 import { scaleSequentialLog } from 'd3-scale'
 import { interpolateYlOrRd } from 'd3-scale-chromatic'
 
@@ -43,8 +43,20 @@ function getColor(value, scale) {
   return scale(value)
 }
 
+const INITIAL_POSITION = { coordinates: [0, 0], zoom: 1 }
+const MIN_ZOOM = 1
+const MAX_ZOOM = 8
+
 export default function WorldMap({ data }) {
   const [tooltip, setTooltip] = useState(null)
+  const [position, setPosition] = useState(INITIAL_POSITION)
+  const [isDragging, setIsDragging] = useState(false)
+
+  const handleZoomIn = () =>
+    setPosition(p => ({ ...p, zoom: Math.min(p.zoom * 1.5, MAX_ZOOM) }))
+  const handleZoomOut = () =>
+    setPosition(p => ({ ...p, zoom: Math.max(p.zoom / 1.5, MIN_ZOOM) }))
+  const handleReset = () => setPosition(INITIAL_POSITION)
 
   const dataByIso3 = useMemo(() => {
     const map = {}
@@ -63,53 +75,106 @@ export default function WorldMap({ data }) {
   )
 
   return (
-    <Card elevation={2}>
-      <CardContent>
+    <Card elevation={2} sx={{ height: '100%' }}>
+      <CardContent sx={{ pb: 1, '&:last-child': { pb: 1 } }}>
         <Typography variant="subtitle1" fontWeight={600} mb={1}>
           World Crude Oil Production
         </Typography>
 
-        <Box position="relative">
+        <Box display="flex" alignItems="center" gap={1} mb={1}>
+          <Typography variant="caption" color="text.secondary">Low</Typography>
+          <Box
+            sx={{
+              width: 120,
+              height: 10,
+              borderRadius: 1,
+              background: 'linear-gradient(to right, #ffffb2, #fd8d3c, #bd0026)',
+            }}
+          />
+          <Typography variant="caption" color="text.secondary">High</Typography>
+          <Typography variant="caption" color="text.disabled" ml={1}>
+            — no data
+          </Typography>
+        </Box>
+
+        <Box position="relative" sx={{ ml: -2, mr: 2, mt: 3 }}>
           <ComposableMap
             projection="geoNaturalEarth1"
+            height={420}
+            projectionConfig={{ scale: 155, center: [0, 12] }}
             style={{ width: '100%', height: 'auto' }}
           >
-            <Geographies geography={GEO_URL}>
-              {({ geographies }) =>
-                geographies.map(geo => {
-                  const numericId = String(geo.id).padStart(3, '0')
-                  const iso3 = NUMERIC_TO_ISO3[numericId]
-                  const entry = iso3 ? dataByIso3[iso3] : null
-                  const fill = getColor(entry?.value_kbd ?? null, colorScale)
+            <ZoomableGroup
+              zoom={position.zoom}
+              center={position.coordinates}
+              minZoom={MIN_ZOOM}
+              maxZoom={MAX_ZOOM}
+              onMoveStart={() => {
+                setIsDragging(true)
+                setTooltip(null)
+              }}
+              onMoveEnd={pos => {
+                setIsDragging(false)
+                setPosition(pos)
+              }}
+            >
+              <Geographies geography={GEO_URL}>
+                {({ geographies }) =>
+                  geographies.map(geo => {
+                    const numericId = String(geo.id).padStart(3, '0')
+                    const iso3 = NUMERIC_TO_ISO3[numericId]
+                    const entry = iso3 ? dataByIso3[iso3] : null
+                    const fill = getColor(entry?.value_kbd ?? null, colorScale)
 
-                  return (
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      fill={fill}
-                      stroke="#111"
-                      strokeWidth={0.4}
-                      style={{
-                        default: { outline: 'none' },
-                        hover: { outline: 'none', fill: '#e0e0e0', cursor: 'pointer' },
-                        pressed: { outline: 'none' },
-                      }}
-                      onMouseEnter={() => {
-                        setTooltip({
-                          name: geo.properties.name,
-                          value: entry?.value_kbd,
-                          year: entry?.year,
-                        })
-                      }}
-                      onMouseLeave={() => setTooltip(null)}
-                    />
-                  )
-                })
-              }
-            </Geographies>
+                    return (
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        fill={fill}
+                        stroke="#111"
+                        strokeWidth={0.4}
+                        style={{
+                          default: { outline: 'none' },
+                          hover: { outline: 'none', fill: '#e0e0e0', cursor: 'pointer' },
+                          pressed: { outline: 'none' },
+                        }}
+                        onMouseEnter={() => {
+                          if (isDragging) return
+                          setTooltip({
+                            name: geo.properties.name,
+                            value: entry?.value_kbd,
+                            year: entry?.year,
+                          })
+                        }}
+                        onMouseLeave={() => setTooltip(null)}
+                      />
+                    )
+                  })
+                }
+              </Geographies>
+            </ZoomableGroup>
           </ComposableMap>
 
-          {tooltip && (
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 8,
+              right: 8,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 0.5,
+              bgcolor: 'background.paper',
+              border: '1px solid',
+              borderColor: 'divider',
+              borderRadius: 1,
+            }}
+          >
+            <IconButton size="small" onClick={handleZoomIn} aria-label="Zoom in">+</IconButton>
+            <IconButton size="small" onClick={handleZoomOut} aria-label="Zoom out">−</IconButton>
+            <IconButton size="small" onClick={handleReset} aria-label="Reset zoom" sx={{ fontSize: 12 }}>⟳</IconButton>
+          </Box>
+
+          {tooltip && !isDragging && (
             <Box
               sx={{
                 position: 'absolute',
@@ -134,22 +199,6 @@ export default function WorldMap({ data }) {
               )}
             </Box>
           )}
-        </Box>
-
-        <Box display="flex" alignItems="center" gap={1} mt={0.5}>
-          <Typography variant="caption" color="text.secondary">Low</Typography>
-          <Box
-            sx={{
-              width: 120,
-              height: 10,
-              borderRadius: 1,
-              background: 'linear-gradient(to right, #ffffb2, #fd8d3c, #bd0026)',
-            }}
-          />
-          <Typography variant="caption" color="text.secondary">High</Typography>
-          <Typography variant="caption" color="text.disabled" ml={1}>
-            — no data
-          </Typography>
         </Box>
       </CardContent>
     </Card>

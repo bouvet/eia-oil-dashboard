@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react'
 import { Card, CardContent, Typography, ToggleButtonGroup, ToggleButton, Box } from '@mui/material'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  Legend, ResponsiveContainer, ReferenceLine,
+  ResponsiveContainer, ReferenceLine,
 } from 'recharts'
 
 const RANGES = ['1Y', '3Y', '5Y', 'All']
@@ -50,8 +50,14 @@ export default function CrudeStocksChart({ data }) {
           </ToggleButtonGroup>
         </Box>
 
+        <Typography variant="caption" color="text.secondary" display="block" mb={1}>
+          <span style={{ color: '#f0a500' }}>—</span> US Total &nbsp;|&nbsp;
+          <span style={{ color: '#4da6ff' }}>—</span> Cushing OK &nbsp;|&nbsp;
+          <span style={{ color: '#888' }}>- -</span> 5Y avg
+        </Typography>
+
         <ResponsiveContainer width="100%" height={320}>
-          <LineChart data={filtered} margin={{ top: 5, right: 20, bottom: 5, left: 10 }}>
+          <LineChart data={filtered} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
             <XAxis
               dataKey="date"
@@ -72,7 +78,6 @@ export default function CrudeStocksChart({ data }) {
               labelFormatter={l => `Week of ${l}`}
               contentStyle={{ backgroundColor: '#1e2530', border: 'none' }}
             />
-            <Legend />
             {avg && (
               <ReferenceLine
                 y={avg}

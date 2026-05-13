@@ -38,8 +38,12 @@ export default function ProductionChart({ data }) {
           </ToggleButtonGroup>
         </Box>
 
+        <Typography variant="caption" color="text.secondary" display="block" mb={1}>
+          <span style={{ color: '#4caf50' }}>—</span> US Production (kbd)
+        </Typography>
+
         <ResponsiveContainer width="100%" height={320}>
-          <LineChart data={filtered} margin={{ top: 5, right: 20, bottom: 5, left: 10 }}>
+          <LineChart data={filtered} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
             <XAxis
               dataKey="date"

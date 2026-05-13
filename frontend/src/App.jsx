@@ -68,16 +68,18 @@ export default function App() {
       <CssBaseline />
       <AppBar position="static" color="transparent" elevation={1}
         sx={{ borderBottom: '1px solid', borderColor: 'divider' }}>
-        <Toolbar>
-          <Box>
-            <Typography variant="h6" fontWeight={700} color="primary">
-              EIA Oil Dashboard
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              Data source: U.S. Energy Information Administration
-            </Typography>
-          </Box>
-        </Toolbar>
+        <Container maxWidth="xl" disableGutters>
+          <Toolbar>
+            <Box>
+              <Typography variant="h6" fontWeight={700} color="primary">
+                EIA Oil Dashboard
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                Data source: U.S. Energy Information Administration
+              </Typography>
+            </Box>
+          </Toolbar>
+        </Container>
       </AppBar>
 
       <Container maxWidth="xl" sx={{ py: 3 }}>
@@ -101,12 +103,12 @@ export default function App() {
             </Grid>
 
             {/* Stocks chart */}
-            <Grid item xs={12} lg={8}>
+            <Grid item xs={12} lg={6}>
               <CrudeStocksChart data={stocks} />
             </Grid>
 
             {/* Production chart */}
-            <Grid item xs={12} lg={4}>
+            <Grid item xs={12} lg={6}>
               <ProductionChart data={production} />
             </Grid>
 
