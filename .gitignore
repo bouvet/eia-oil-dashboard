@@ -5,6 +5,9 @@
 data/oil_dashboard.duckdb
 DuckDB.session.sql
 
+# sql queries
+data/*.sql
+
 # Raw data layers
 data/bronze/
 data/silver/
@@ -32,3 +35,6 @@ frontend/.env.local
 
 # initial prompt to claude code
 claude_code_prompt_v1.md
+
+# VSCode settings
+.vscode/
