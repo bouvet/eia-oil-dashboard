@@ -8,6 +8,11 @@ open data API v2](https://www.eia.gov/opendata/).
 - **Frontend**: React 18 + Vite + Material UI dark theme
 - **Data layout**: bronze (raw) → silver (cleaned) → gold (dashboard views) in DuckDB
 
+> **Note**: This is a first version of the dashboard, built as a personal learning project 
+> exploring FastAPI, React, and DuckDB. Due to starting a new contract, further development 
+> will be limited for the foreseeable future — the project will mostly remain as-is, 
+> though contributions and suggestions are welcome.
+
 ![Dashboard screenshot](docs/dashoard_screenshot.jpg)
 
 ## Panels
