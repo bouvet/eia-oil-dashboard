@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="template-qa-quadrant" name="Page-1">
+        <mxGraphModel dx="1113" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Agile QA Quadrant — [Project Name]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="18" width="400" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;b&gt;Q2&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;• [Functional / acceptance test]&lt;br&gt;• [Story-level test]&lt;br&gt;• [Prototype / simulation]&lt;br&gt;• [Manual business validation]&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;fontSize=11;spacingLeft=8;spacingTop=8;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a4a1a;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="80" width="320" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;b&gt;Q3&lt;/b&gt;&lt;br&gt;&lt;br&gt;• [Exploratory test]&lt;br&gt;• [Usability / UAT]&lt;br&gt;• [End-user demo / feedback]&lt;br&gt;• [Alpha / beta testing]" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;fontSize=11;spacingLeft=8;spacingTop=8;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#7d5a00;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="80" width="320" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;b&gt;Q1&lt;/b&gt;&lt;br&gt;&lt;br&gt;• [Unit test]&lt;br&gt;• [Component test]&lt;br&gt;• [Integration test]&lt;br&gt;• [Contract test]" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;fontSize=11;spacingLeft=8;spacingTop=8;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#003366;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="299" width="320" height="221" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;b&gt;Q4&lt;/b&gt;&lt;br&gt;&lt;br&gt;• [Performance test]&lt;br&gt;• [Security test]&lt;br&gt;• [Load / stress test]&lt;br&gt;• [Other non-functional test]" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;fontSize=11;spacingLeft=8;spacingTop=8;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#721c24;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="299" width="320" height="221" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Critiques the Product" style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#444444;rotation=90;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="284" width="320" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Business-facing" style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#444444;rotation=0;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="64" width="120" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Supports the Team" style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#444444;rotation=-90;" parent="1" vertex="1">
+                    <mxGeometry x="-50" y="284" width="320" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Technology-facing" style="text;html=1;align=center;verticalAlign=middle;resizable=0;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#444444;rotation=0;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="520" width="120" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="[None–High]" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888888;fontColor=#555555;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="90" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="[None–High]" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888888;fontColor=#555555;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="90" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="[None–High]" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888888;fontColor=#555555;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="310" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="[None–High]" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888888;fontColor=#555555;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="310" width="60" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

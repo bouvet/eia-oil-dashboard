@@ -1,0 +1,133 @@
+﻿<mxfile host="app.diagrams.net">
+  <diagram name="Delivery Flow">
+    <mxGraphModel background="#ffffff" dx="1422" dy="762" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== TOP BANNERS ===== -->
+        <mxCell id="2" value="QA by the team" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4a6fa5;strokeColor=none;fontStyle=1;fontSize=14;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="590" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Verified by the users" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4a6fa5;strokeColor=none;fontStyle=1;fontSize=13;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="620" y="10" width="570" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PHASE PANELS ===== -->
+        <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1a1f3c;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="10" y="70" width="280" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1a1f3c;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="70" width="310" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1a1f3c;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="620" y="70" width="290" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1a1f3c;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="920" y="70" width="270" height="320" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PHASE LABELS ===== -->
+        <mxCell id="8" value="&lt;b&gt;[Phase 1]&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#4a6fa5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="15" y="75" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;b&gt;[Phase 2]&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#4a6fa5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="305" y="75" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;[Phase 3]&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#4a6fa5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="625" y="75" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;b&gt;[Phase 4]&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#4a6fa5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="925" y="75" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ===== ENVIRONMENT SUB-HEADERS ===== -->
+        <!-- Phase 1 has no deployment environment; add a sub-header here if needed -->
+        <mxCell id="12" value="&lt;b&gt;[Environment 2]&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#1a1f3c;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="305" y="97" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;b&gt;[Environment 3]&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#1a1f3c;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="625" y="97" width="280" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;b&gt;[Environment 4]&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#1a1f3c;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="925" y="97" width="260" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PHASE 1 COLUMNS ===== -->
+        <!-- Phases can have any number of columns. Stack vertically; connect with downward arrows.
+             The last column's right side feeds the cross-phase arrow to the next phase.
+             Duplicate either box below to add more columns to this phase. -->
+        <!-- Basic column — no gate. Use for work states that have no entry or exit criteria. -->
+        <mxCell id="20" value="[Column]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#4a6fa5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="125" width="240" height="55" as="geometry" />
+        </mxCell>
+        <!-- Column with DoR — red label means items must meet entry criteria to move into this column. -->
+        <mxCell id="21" value="&lt;b&gt;[Column]&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#b85450&quot; size=&quot;2&quot;&gt;&#9670; DoR &#8212; [entry criteria]&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#4a6fa5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="230" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="endArrow=block;endFill=1;strokeColor=#555555;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="20" target="21" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PHASE 2 COLUMNS ===== -->
+        <!-- This phase shows two columns as an example. Remove one or add more as needed. -->
+        <!-- Basic column — no gate. -->
+        <mxCell id="30" value="[Column]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#4a6fa5;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="125" width="260" height="55" as="geometry" />
+        </mxCell>
+        <!-- Column with DoD — green label means items must meet exit criteria to leave this column. -->
+        <mxCell id="31" value="&lt;b&gt;[Column]&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#82b366&quot; size=&quot;2&quot;&gt;&#9670; DoD &#8212; [exit criteria]&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#4a6fa5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="230" width="260" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="endArrow=block;endFill=1;strokeColor=#555555;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="30" target="31" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PHASE 3 COLUMN(S) ===== -->
+        <!-- Single column shown; add more by duplicating this cell and adjusting y. -->
+        <mxCell id="40" value="&lt;b&gt;[Column]&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#82b366&quot; size=&quot;2&quot;&gt;&#9670; DoD &#8212; [exit criteria]&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#4a6fa5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="150" width="250" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PHASE 4 COLUMN(S) ===== -->
+        <!-- Terminal phase — typically one column representing the done/deployed state. -->
+        <mxCell id="50" value="&lt;b&gt;[Column]&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#82b366&quot; size=&quot;2&quot;&gt;&#9670; DoD &#8212; [done criteria]&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f0fe;strokeColor=#4a6fa5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="940" y="150" width="230" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CROSS-PHASE L-ARROWS ===== -->
+        <!-- Each arrow exits the RIGHT side of the LAST column in phase N,
+             bends UP to align with the FIRST column of phase N+1,
+             then enters its LEFT side. Update waypoint coordinates if column positions change.
+             If phase N and N+1 share the same center-y (single column per phase at same height),
+             a straight arrow (no waypoints) is sufficient. -->
+        <mxCell id="60" value="" style="endArrow=block;endFill=1;strokeColor=#555555;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="21" target="30" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="262" />
+              <mxPoint x="290" y="152" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- Phase 2 to Phase 3: exits right of Column 4, turns up, enters left of Column 5 -->
+        <mxCell id="61" value="" style="endArrow=block;endFill=1;strokeColor=#555555;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="31" target="40" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="267" />
+              <mxPoint x="610" y="187" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- Phase 3 to Phase 4: straight horizontal arrow (same center-y) -->
+        <mxCell id="62" value="" style="endArrow=block;endFill=1;strokeColor=#555555;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="40" target="50" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BOTTOM CI BANNER ===== -->
+        <mxCell id="90" value="Continuous integration and automatic testing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4a6fa5;strokeColor=none;fontStyle=1;fontSize=12;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="10" y="400" width="1180" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
